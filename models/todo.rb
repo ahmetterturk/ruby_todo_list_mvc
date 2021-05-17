@@ -19,14 +19,14 @@ class Todo
     def update(content, new_content)
         item = @todo_list.find {|item| item.content == content}
         item.content = new_content
-        return item unless item.nil?
+        item unless item.nil?
     end
 
     def delete(content)
         item = @todo_list.find {|item| item.content == content}
         @todo_list.delete(item) unless item.nil?
     end 
-
+    
     # def display_todos
     #     @todo_list.each do |todo|
     #         puts todo
@@ -36,8 +36,6 @@ class Todo
     def display_todos
         @todo_list
     end
-
-
 end
 
 # walk = "take a walk"

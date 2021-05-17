@@ -1,5 +1,6 @@
 require_relative '../models/todo'
 require 'tty-table'
+require 'tty-prompt'
 
 class TodoView 
     def initialize(todo)
@@ -23,17 +24,12 @@ class TodoView
             puts "Nothing to update, list empty!"
         else
             puts "select a todo to be updated"
-            content = gets.chomp.strip
-            
-            # list_of_todos = @todo.display_todos.map {|todo| todo}
-
-            
-
+            list_of_todos = @todo.display_todos.map {|todo| todo.to_s}
+            prompt = TTY::Prompt.new
+            input = prompt.select("Select a todo to be updated", list_of_todos)
             puts "enter new todo to be replaced"
             new_content = gets.chomp.strip
-
-            @todo.update(content, new_content)
-
+            @todo.update(input, new_content)
         end
     end
 
@@ -42,7 +38,9 @@ class TodoView
             puts "Nothing to delete, list empty!"
         else
             puts "Select a todo to be deleted"
-            content = gets.chomp.strip
+            list_of_todos = @todo.display_todos.map {|todo| todo.to_s}
+            prompt = TTY::Prompt.new
+            content = prompt.select("Select a todo to be updated", list_of_todos)
             @todo.delete(content)
         end
     end 
