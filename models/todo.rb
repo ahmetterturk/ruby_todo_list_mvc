@@ -26,8 +26,7 @@ class Todo
         item = @todo_list.find {|item| item.content == content}
         @todo_list.delete(item) unless item.nil?
     end 
-
-    
+               
     # def display_todos
     #     @todo_list.each do |todo|
     #         puts todo
