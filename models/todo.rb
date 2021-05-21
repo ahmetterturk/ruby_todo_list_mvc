@@ -26,41 +26,8 @@ class Todo
         item = @todo_list.find {|item| item.content == content}
         @todo_list.delete(item) unless item.nil?
     end 
-               
-    # def display_todos
-    #     @todo_list.each do |todo|
-    #         puts todo
-    #     end
-    # end
 
     def display_todos
         @todo_list
     end
 end
-
-# walk = "take a walk"
-# sleep = "sleep for an hour"
-# hw = "finish the assignment"
-# eat = "eat lunch"
-
-# todo = Todo.new("Ahmet's Todo")
-# p todo.name
-# puts '------------'
-# todo.add(walk)
-# todo.add(sleep)
-# todo.add(hw)
-# todo.add(eat)
-# todo.display_todos
-
-# puts
-# todo.delete(hw)
-# todo.display_todos
-
-# puts
-# todo.delete(sleep)
-# todo.display_todos
-
-# puts
-# todo.update(walk, "Fuck walking! Lets go for a run!")
-# todo.display_todos
-

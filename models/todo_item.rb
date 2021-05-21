@@ -9,6 +9,3 @@ class TodoItem
         "#{@content}"
     end
 end
-
-# walk = TodoItem.new("take a walk")
-# puts walk

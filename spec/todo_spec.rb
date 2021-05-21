@@ -38,12 +38,3 @@ describe Todo do
         expect {todo.delete(content_2)}.to change {todo.length}.by(-1)
     end
 end
-
-
-# describe TodoView do 
-#     it "should " do 
-
-#     end
-
-
-# end
